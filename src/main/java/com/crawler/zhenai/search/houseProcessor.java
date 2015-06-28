@@ -19,7 +19,8 @@ public class houseProcessor
     	String url = page.getUrl().get();
         List<String> links = page.getHtml().links().regex("http://bbs.17house.com/.*").all();
         page.addTargetRequests(links);
-        if(url.matches("http://bbs.17house.com/home.php?mod=space&uid=[0-9]{5,}.*")||url.matches("http://bbs.17house.com/space-username-.*")) {
+//        if(url.matches("http://bbs.17house.com/home.php?mod=space&uid=[0-9]{5,}.*")||url.matches("http://bbs.17house.com/space-username-.*") || url.matches("http://bbs.17house.com/space-uid-[0-9]{1,}.html")) {
+        if(url.matches("http://bbs.17house.com/space-uid-[0-9]{1,}.html")) {
 //        	System.out.println("path--->"+page.getHtml().xpath("/html/body/article[@class='myhome-wrap frameW clearfix']/section[@class='mod-brief-info mt20 bgff radius-3 bord']/div[@class='photo-album fl']/div[@class='u-ablums-player']/div[@id='AblumsPlayID']/div[@id='AblumsDisplayImgID']/img[@class='img']/@src").toString());
 //            page.putField("head_img", page.getHtml().xpath("/html/body/section[@class='mod-top-ceiling bord ceiling-js hide']/div[@class='ceiling-box clearfix']/div[@class='ceiling-photo fl']/a/img/@src").toString());
            System.out.println(url);
